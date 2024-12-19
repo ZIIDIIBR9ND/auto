@@ -296,7 +296,8 @@ class CreateAccount():
     
     
     
-    def AddEmail(self):cookie = '; '.join(['%s=%s'%(key,value) for key,value in self.r.cookies.get_dict().items()]) + '; m_pixel_ratio=1.25; wd=360x780;'
+    def AddEmail(self):
+        cookie = '; '.join(['%s=%s'%(key,value) for key,value in self.r.cookies.get_dict().items()]) + '; m_pixel_ratio=1.25; wd=360x780;'
         req = self.r.get('https://web.facebook.com/').text
         dta = getdata(req)
         dta.update({'fb_api_caller_class':'RelayModern','server_timestamps':True})
